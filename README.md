@@ -58,16 +58,11 @@ architect LSTM RNN with KERAS. train model. evaluate using vailation testset. vi
 comparisons PRISM3 PIM2 with model
 
 
+0 - dead
+1 - alive
 
 
 
 
-
-
-
-
-
-
-
-
-
+keras can use CPU and GPUs
+GPUs more power efficient and fast made for parallel processing

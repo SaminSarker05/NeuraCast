@@ -1,6 +1,8 @@
 '''
-
-
+1. read data from hdf5 file paths
+2. normalize features to enchance model interpretability
+3. fill missing variables in each patient observation
+4. pad encounters to have same observation count
 '''
 
 import os

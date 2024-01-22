@@ -35,3 +35,8 @@ output = TimeDistributed(Dense(1, activation='sigmoid'), name='output')(lstm)
 optimizer = RMSprop(lr=0.005)
 model.compile(optimizer=optimizer, loss='binary_crossentropy')
 
+
+# train and test model
+
+training = model.fit(x_train, y_train, batch_size=128, epochs=5, verbose=1)
+predictions = model.predict(x_valid)

@@ -31,7 +31,15 @@
     <samp>0.005 Learning Rate</samp>
     </td>
     <td width="66%">
-    <samp>Balances training and epoch duration with step size for ideal model learning time </samp>
+    <samp>Balances training and epoch duration with step size for ideal model learning time</samp>
+    </td>
+  </tr>
+  <tr>
+    <td width="33%"">
+    <samp>Dropout Parameter</samp>
+    </td>
+    <td width="66%">
+    <samp>Random dropout of input vector elements; forces model to use covariate variables as proxy</samp>
     </td>
   </tr>
 

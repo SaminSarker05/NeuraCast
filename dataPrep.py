@@ -1,5 +1,6 @@
 '''
 
+
 '''
 
 import os
@@ -13,6 +14,7 @@ x_train = pd.read_hdf('path-to-x-train-data')
 y_train = pd.read_hdf('path-to-y-train-data')
 x_valid = pd.read_hdf('path-to-x-valid-data')
 y_valid = pd.read_hdf('path-to-y-valid-data')
+
 
 # normalize data by substracting mean and dividing by std
 
@@ -36,3 +38,24 @@ x_valid[fill] = x_valid.groupby(level=0)[fillvars].ffill()
 x_train.fillna(value=0, inplace=True)
 x_valid.fillna(value=0, inplace=True)
 
+
+# padd all patient encounters since observation count not identical
+
+from tensorflow.keras.preprocessing import sequence
+
+maxlen = 500
+
+trainid = x_train.index.levels[0]
+validid = x_valid.index.levels[0]
+
+x_train = [x_train.loc[patient].values for patient in trainid]
+y_train = [x_train.loc[patient].values for patient in trainid]
+
+x_train = sequence.pad_sequences(x_train, dtype='float32', maxlen=maxlen, padding='post', truncating='post')
+y_train = sequence.pad_sequences(y_train, dtype='float32', maxlen=maxlen, padding='post', truncating='post')
+
+x_valid = [x_valid.loc[patient].values for patient in validid]
+y_valid = [y_valid.loc[patient].values for patient in validid]
+
+x_valid = sequence.pad_sequences(x_valid, dtype='float32', maxlen=maxlen, padding='post', truncating='post')
+y_valid = sequence.pad_sequences(y_valid, dtype='float32', maxlen=maxlen, padding='post', truncating='post')

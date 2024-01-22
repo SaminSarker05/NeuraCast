@@ -42,5 +42,7 @@
     <samp>Random dropout of input vector elements; forces model to use covariate variables as proxy</samp>
     </td>
   </tr>
-
 </table>
+
+## Notes
+- Model completed as part of NVDIA Deep Learning Institute Course

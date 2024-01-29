@@ -1,6 +1,6 @@
 # NeuraCast - RNN Model
 
-<samp>Modeling patient time series data with Long Short Term Memory Recurrent Neural Network in keras. Provides probablity of patient survival using electronic health records. Data is preprocessed filling gaps, normalizing features, and padding. A single LSTM using binary cross entropy loss and RMSprop optimizer.</samp>
+<samp>Modeling patient time series data with Long Short Term Memory Recurrent Neural Network in keras. Provides probability of patient survival using electronic health records. Data is preprocessed filling gaps, normalizing features, and padding. A single LSTM using binary cross entropy loss and RMSprop optimizer.</samp>
 
 ## Tools/Frameworks
 
